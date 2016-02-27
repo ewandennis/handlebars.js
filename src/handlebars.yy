@@ -141,6 +141,7 @@ helperName
   : path -> $1
   | dataName -> $1
   | STRING -> {type: 'StringLiteral', value: $1, original: $1, loc: yy.locInfo(@$)}
+  | EXPRESSION -> {type: 'ExprLiteral', value: $1, original: $1, loc: yy.locInfo(@$)}
   | NUMBER -> {type: 'NumberLiteral', value: Number($1), original: Number($1), loc: yy.locInfo(@$)}
   | BOOLEAN -> {type: 'BooleanLiteral', value: $1 === 'true', original: $1 === 'true', loc: yy.locInfo(@$)}
   | UNDEFINED -> {type: 'UndefinedLiteral', original: undefined, value: undefined, loc: yy.locInfo(@$)}
